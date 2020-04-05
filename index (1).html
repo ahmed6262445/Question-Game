@@ -42,22 +42,23 @@
           <button
             id="" 
             class="cat-button theme"
-            onclick="setQtype('1');"> <!---Need to change Id--->
+            onclick="showIslamabadLocDiv();"> <!---Need to change Id--->
             <img src="./Images/car1.png">
           </button>
           <button
             id=""  
             class="cat-button theme"
-            onclick="setQtype('2');"> <!---Need to change Id--->
+            onclick="showIslamabadLocDiv();"> <!---Need to change Id--->
             <img src="./Images/car2.png">
           </button>
           <button
             id="" 
             class="cat-button theme"
-            onclick="setQtype('3');"> <!---Need to change Id--->
+            onclick="showIslamabadLocDiv();"> <!---Need to change Id--->
             <img src="./Images/car3.png">
           </button>
         </div>
+
         <div id="islamatronlocDiv" style="display:none">
           <button
             id="" 
@@ -76,6 +77,14 @@
             class="cat-button theme"
             onclick="setQuestions('3');"> <!---Need to change Id--->
             <img src="./Images/car3.png">
+          </button>
+          <button
+          id="oklocBtn"
+          class="start-button disabled theme"
+          onclick="setQtype();"
+          style="display: none;" 
+          >
+            Ok Location!
           </button>
         </div>
 

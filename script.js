@@ -162,6 +162,7 @@ const sportsQ = document.getElementById("sportsQ");
 const videogamesQ = document.getElementById("videogamesQ");
 const startBtn = document.getElementById("startBtn");
 
+const oklocBtn = document.getElementById("oklocBtn");
 const okBtn = document.getElementById("okBtn");
 const islamtronDiv = document.getElementById("islamatronCarsDiv");
 const islamabadDiv = document.getElementById("islamabadCarsDiv");
@@ -200,7 +201,7 @@ const choices = {
     'D': choiceD
 };
 
-function showCars(){
+function showCars(val){
     if (divChoice == "1"){
         islamtronDiv.style.display = "inline-block";
     } else{
@@ -211,7 +212,7 @@ function showCars(){
     disableOkButton(true);
     // disableStartButton(false);
     activateCatButton(val);
-    disableOkButton(false);
+    // disableOkButton(false);
 }
 
 function showlocation(){
@@ -288,8 +289,19 @@ function setQtype(val1)
             divChoice1 = "2";
             break;
     }
-    disableOkButton(false);
+    disableOklocButton(false);
     // activateCatButton(val);
+}
+
+function showIslamabadLocDiv()
+{
+    console.log("Infuction");
+    subtitleHeading.innerHTML = "Select a location:"
+    // islamtronDiv.style.display = "none";
+    // islamtronlocDiv.style.display = "inline-block";
+    islamtronDiv.style.display = "none";
+    islamtronlocDiv.style.display = "inline-block";
+    console.log("GOES down");
 }
 
 function setQuestions(val) {
@@ -299,6 +311,7 @@ function setQuestions(val) {
             break;
         case "2":
             questions = videogameQuestions;
+            break;
         case "3":
             questions = sportsQuestions1;
             break;
@@ -306,14 +319,13 @@ function setQuestions(val) {
             questions = videogameQuestions1;
             break;
             default:
-                questions = null;
-                
+                questions = null; 
             }
-            disableStartButton(false);
-            activateCatButton(val);
-            lastQuestionIndex = questions ? questions.length - 1 : null;
-        }
-
+    disableStartButton(false);
+    activateCatButton(val);
+    lastQuestionIndex = questions ? questions.length - 1 : null;
+}
+    
 
 function disableSportsQBtn(disabled)
 {
@@ -357,6 +369,18 @@ function disableOkButton(disabled) {
     } else {
         okBtn.classList.remove("disabled");
         okBtn.style.display = "initial";
+    }
+}
+
+function disableOklocButton(disabled) {
+    oklocButtonDisabled = !disabled;
+    console.log(oklocBtn.innerHTML);
+    if (disabled) {
+        oklocBtn.classList.add("disabled");
+        oklocBtn.style.display = "none";
+    } else {
+        oklocBtn.classList.remove("disabled");
+        oklocBtn.style.display = "initial";
     }
 }
 function disableStartButton(disabled) {
