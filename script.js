@@ -67,7 +67,7 @@ let videogameQuestions = [
         correct: ["A","B","C","D"]
     }
 ];
-let sportsQuestions = [
+let sportsQuestions1 = [
     {
         question: "Where do you want to go?S1",
         choiceA: "Office",
@@ -94,7 +94,7 @@ let sportsQuestions = [
     }
 ];
 
-let videogameQuestions = [
+let videogameQuestions1 = [
     {
         question: "Where do you want to go?V1",
         choiceA: "Faisal Mosque",
@@ -163,10 +163,10 @@ const videogamesQ = document.getElementById("videogamesQ");
 const startBtn = document.getElementById("startBtn");
 
 const okBtn = document.getElementById("okBtn");
-const islamtronDiv = document.getElementById("islamatronCarsDiv")
-const islamabadDiv = document.getElementById("islamabadCarsDiv")
-const islamtronlocDiv = document.getElementById("islamatronlocDiv")
-const islamabadlocDiv = document.getElementById("islamabadlocDiv")
+const islamtronDiv = document.getElementById("islamatronCarsDiv");
+const islamabadDiv = document.getElementById("islamabadCarsDiv");
+const islamtronlocDiv = document.getElementById("islamatronlocDiv");
+const islamabadlocDiv = document.getElementById("islamabadlocDiv");
 const startBtnsDiv = document.getElementById("startBtnsDiv");
 const subtitleHeading = document.getElementById("subtitle");
 let lastQuestionIndex;
@@ -198,7 +198,7 @@ const choices = {
     'B': choiceB,
     'C': choiceC,
     'D': choiceD
-}
+};
 
 function showCars(){
     if (divChoice == "1"){
@@ -206,10 +206,10 @@ function showCars(){
     } else{
         islamabadDiv.style.display = "inline-block";
     }
-    subtitleHeading.innerHTML = "Select a car:"
+    subtitleHeading.innerHTML = "Select a car:";
     disabledStartBtnsDiv(true);
     disableOkButton(true);
-    // disableStartButton(false)
+    // disableStartButton(false);
     activateCatButton(val);
     disableOkButton(false);
 }
@@ -220,10 +220,10 @@ function showlocation(){
     } else{
         islamabadDiv.style.display = "inline-block";
     }
-    subtitleHeading.innerHTML = "Select a location wher you want to go:"
+    subtitleHeading.innerHTML = "Select a location wher you want to go:";
     disabledStartBtnsDiv(true);
     disableOkButton(true);
-    // disableStartButton(false)
+    // disableStartButton(false);
     activateCatButton(val);
     disableOkButton(false);
 }
@@ -319,11 +319,11 @@ function disableSportsQBtn(disabled)
 {
     sportsQDisabled = !disabled;
     if(disabled){
-        sportsQ.classList.add("disabled")
+        sportsQ.classList.add("disabled");
         sportsQ.style.display = "none";
         sportsQ.style.visibility = false;
     } else{
-        sportsQ.classList.remove("disabled")
+        sportsQ.classList.remove("disabled");
         sportsQ.style.display = "initial";
         sportsQ.style.visibility = true;
     }
@@ -341,30 +341,31 @@ function disableVideogamesQBtn(disabled)
 {
     videogamesQDisabled = !disabled;
     if(disabled){
-        videogamesQ.classList.add("disabled")
+        videogamesQ.classList.add("disabled");
         videogamesQ.style.display = "none";
     } else{
-        videogamesQ.classList.remove("disabled")
+        videogamesQ.classList.remove("disabled");
         videogamesQ.style.display = "initial";
     }
 }
 function disableOkButton(disabled) {
     okButtonDisabled = !disabled;
+    console.log(okBtn.innerHTML);
     if (disabled) {
-        okBtn.classList.add("disabled")
+        okBtn.classList.add("disabled");
         okBtn.style.display = "none";
     } else {
-        okBtn.classList.remove("disabled")
+        okBtn.classList.remove("disabled");
         okBtn.style.display = "initial";
     }
 }
 function disableStartButton(disabled) {
     startButtonDisabled = !disabled;
     if (disabled) {
-        startBtn.classList.add("disabled")
+        startBtn.classList.add("disabled");
         startBtn.style.display = "none";
     } else {
-        startBtn.classList.remove("disabled")
+        startBtn.classList.remove("disabled");
         startBtn.style.display = "initial";
     }
 }
@@ -373,8 +374,8 @@ function disableStartButton(disabled) {
  * On category screen, unselect all category buttons
  */
 function disactivateAllCatButtons() {
-    sportsQ.classList.remove("active")
-    videogamesQ.classList.remove("active")
+    sportsQ.classList.remove("active");
+    videogamesQ.classList.remove("active");
 }
 
 /**
@@ -383,10 +384,10 @@ function disactivateAllCatButtons() {
 function activateCatButton(val) {
     disactivateAllCatButtons();
     if (val == "1") {
-        sportsQ.classList.add("active")
+        sportsQ.classList.add("active");
     }
     if (val == "2") {
-        videogamesQ.classList.add("active")
+        videogamesQ.classList.add("active");
     }
 }
 
@@ -447,18 +448,18 @@ function displayQuestion() {
 }
 
 function showNoChoice(element) {
-    element.classList.remove("correct")
-    element.classList.remove("wrong")
+    element.classList.remove("correct");
+    element.classList.remove("wrong");
 }
 
 function showWrongChoice(element) {
-    element.classList.remove("correct")
-    element.classList.add("wrong")
+    element.classList.remove("correct");
+    element.classList.add("wrong");
 }
 
 function showCorrectChoice(element) {
-    element.classList.remove("wrong")
-    element.classList.add("correct")
+    element.classList.remove("wrong");
+    element.classList.add("correct");
 }
 
 function shuffleQuestions(questionArr) {
@@ -484,17 +485,17 @@ function isAnswerCorrect(answer,val) {
             if (runningQuestionIndex < 20) {
                 score++;
                 answerIsCorrect(runningQuestionIndex);
-                showCorrectChoice(choices[answer])
+                showCorrectChoice(choices[answer]);
             }
         } else if (questions[runningQuestionIndex].correct[1] == answer) {
             if (runningQuestionIndex < 20) {
                 score=score+2;
                 answerIsCorrect(runningQuestionIndex);
-                showCorrectChoice(choices[answer])
+                showCorrectChoice(choices[answer]);
             }
         }else {
             answerIsWrong(runningQuestionIndex);
-            showWrongChoice(choices[answer])
+            showWrongChoice(choices[answer]);
         }
         setTimeout(function () {
             Object.values(choices).forEach(choice => showNoChoice(choice));
@@ -539,7 +540,7 @@ function resetAnswer(index) {
 }
 
 function resetAllAnswers() {
-    questions.forEach((q, i) => resetAnswer(i))
+    questions.forEach((q, i) => resetAnswer(i));
 }
 
 function displayScore() {
