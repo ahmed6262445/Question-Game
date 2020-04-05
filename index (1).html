@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Your City App</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--Player Info + Start Page-->
+    <div class="gameContainer">
+      <div id="start">
+        <h1 id="title">Smart Life</h1>
+        <h3 id="subtitle">Choose a city:</h3>
+        <!--        <input autofocus id="playerName" type="text" placeholder="Player Name"/>-->
+        <div id="startBtnsDiv">
+          <button
+            id="sportsQ"
+            class="cat-button theme"
+            onclick="setCars('1');">
+            <img src="./Images/image.png">
+          </button>
+          <button
+            id="videogamesQ"
+            class="cat-button theme"
+            onclick="setCars('2');">
+            <img src="./Images/image1.png">
+          </button>
+        </div>
+        
+        <div id="islamatronCarsDiv" style="display:none">
+          <button
+            id="" 
+            class="cat-button theme"
+            onclick="setQtype('1');"> <!---Need to change Id--->
+            <img src="./Images/car1.png">
+          </button>
+          <button
+            id=""  
+            class="cat-button theme"
+            onclick="setQtype('2');"> <!---Need to change Id--->
+            <img src="./Images/car2.png">
+          </button>
+          <button
+            id="" 
+            class="cat-button theme"
+            onclick="setQtype('3');"> <!---Need to change Id--->
+            <img src="./Images/car3.png">
+          </button>
+        </div>
+        <div id="islamatronlocDiv" style="display:none">
+          <button
+            id="" 
+            class="cat-button theme"
+            onclick="setQuestions('1');"> <!---Need to change Id--->
+            <img src="./Images/car1.png">
+          </button>
+          <button
+            id=""  
+            class="cat-button theme"
+            onclick="setQuestions('2');"> <!---Need to change Id--->
+            <img src="./Images/car2.png">
+          </button>
+          <button
+            id="" 
+            class="cat-button theme"
+            onclick="setQuestions('3');"> <!---Need to change Id--->
+            <img src="./Images/car3.png">
+          </button>
+        </div>
+
+        <div id="islamabadCarsDiv" style="display:none">
+          <button
+            id=""
+            class="cat-button theme"
+            onclick="setQuestions('2');">
+            <img src="./Images/scar1.png"> <!---Need to change Id--->
+          </button>
+          <button
+            id=""
+            class="cat-button theme"
+            onclick="setQuestions('2');">
+            <img src="./Images/scar2.png"> <!---Need to change Id--->
+          </button>
+          <button
+            id=""
+            class="cat-button theme"
+            onclick="setQuestions('2');">
+            <img src="./Images/scar3.png"> <!---Need to change Id--->
+          </button>
+        </div>
+          
+
+        <button
+          id="startBtn"
+          class="start-button disabled theme"
+          onclick="startGame();"
+          style="display: none;"  
+        >
+          Start Game!
+        </button>
+        
+        <button
+          id="okBtn"
+          class="start-button disabled theme"
+          onclick="showCars();"
+          style="display: none;" 
+        >
+          Ok!
+        </button>
+
+      </div>
+      <!--Questions and Answer Page-->
+      <div id="trivia">
+        <div id="question"><p>Question</p></div>
+        <div id="timer">
+          <div id="timeGaugeLeft"></div>
+          <div id="timeGauge"></div>
+          <div id="counter"></div>
+        </div>
+        <div id="choices">
+          <div
+            id="A"
+            class="choice unselectable"
+            unselectable="on"
+            onclick="isAnswerCorrect('A')"
+          >
+            A
+          </div>
+          <div
+            id="B"
+            class="choice unselectable"
+            unselectable="on"
+            onclick="isAnswerCorrect('B')"
+          >
+            B
+          </div>
+          <div
+            id="C"
+            class="choice unselectable"
+            unselectable="on"
+            onclick="isAnswerCorrect('C')"
+          >
+            C
+          </div>
+          <div
+            id="D"
+            class="choice unselectable"
+            unselectable="on"
+            onclick="isAnswerCorrect('D')"
+          >
+            D
+          </div>
+        </div>
+      </div>
+      <!--Score Display Page-->
+      <div id="finish" style="display:none;">
+        <span id="scoreContainer"></span>
+        <button class="startagain-button" onclick="startAgain()">
+          Start again
+        </button>
+      </div>
+
+      <div id="progress" class="prog" style="display:none">
+        <span class="square" id="q0"></span>
+        <span class="square" id="q1"></span>
+        <span class="square" id="q2"></span>
+        <span class="square" id="q3"></span>
+        <span class="square" id="q4"></span>
+        <span class="square" id="q5"></span>
+        <span class="square" id="q6"></span>
+        <span class="square" id="q7"></span>
+        <span class="square" id="q8"></span>
+        <span class="square" id="q9"></span>
+        <span class="square" id="q10"></span>
+        <span class="square" id="q11"></span>
+        <span class="square" id="q12"></span>
+        <span class="square" id="q13"></span>
+        <span class="square" id="q14"></span>
+        <span class="square" id="q15"></span>
+        <span class="square" id="q16"></span>
+        <span class="square" id="q17"></span>
+        <span class="square" id="q18"></span>
+        <span class="square" id="q19"></span>
+      </div>
+    </div>
+
+    <!--JavaScript-->
+    <script src="script.js" async defer></script>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+body {
+    background-color: lightblue;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: "Gill Sans", sans-serif;
+}
+
+h1 {
+    font-size: 68px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+#trivia {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#playerName {
+    display: block;
+    padding: 15px 25px;
+    font-size: 24px;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 16px;
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn {
+    font-family: "Gill Sans", sans-serif;
+    display: block;
+}
+
+.start-button {
+    margin-top: 36px;
+
+    display: block;
+    opacity: 100%;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #f4511e;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-bottom: 16px;
+    transition: opacity 0.1s linear;
+}
+
+.start-button.disabled {
+    opacity: 0%;
+}
+
+.start-button:hover {
+    background-color: #aa3918;
+    color: #fff;
+}
+
+.start-button.active,
+.start-button:active {
+    background-color: #aa3918;
+    color: #fff;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+.startagain-button {
+    margin-top: 36px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    opacity: 100%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #4CAF50;
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-bottom: 16px;
+    transition: opacity 0.1s linear;
+}
+
+.startagain-button:hover {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.startagain-button.active,
+.startagain-button:active {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: #3e8e41;
+    color: #fff;
+    box-shadow: 0 5px #666;
+
+}
+
+
+.cat-button {
+    display: block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #4CAF50;
+    background-color: #eee;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-bottom: 16px;
+}
+
+.cat-button:hover {
+    background-color: #3e8e41;
+    color: #eee;
+}
+
+.cat-button.active,
+.cat-button:active {
+    background-color: #4CAF50;
+    color: #eee;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.gameContainer {
+    border-radius: 25px;
+    background-color: #2f333b;
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+#question {
+    position: absolute;
+    left:50%;
+    top:10%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-family: serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 56px;
+    margin-top: 16px;
+    max-width: 600px;
+
+}
+
+.square {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+#timer {
+    position: absolute;
+    left:50%;
+    top:25%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#counter {
+    color: #aaa;
+    z-index: 1;
+    font-size: 24px;
+    font-family: "Impact";
+}
+
+#timeGaugeLeft {
+    background-color: #555;
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    border-radius: 12px;
+}
+
+#timeGauge {
+    height: 30px;
+    width: 10px;
+    display: inline-block;
+    background-color: #747474;
+    position: absolute;
+    top: 0;
+    border-radius: 12px;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    font-family: Impact, Charcoal, sans-serif;
+    padding: 10px;
+}
+
+#progress {
+    position: absolute;
+    left:52%;
+    top:90%;
+    transform: translate(-50%, -50%);
+    padding-right: 20px;
+}
+
+#choices {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.choice {
+    display: block;
+    cursor: pointer;
+    width: 300px;
+    color: #bbb;
+    font-size: 24px;
+    margin-bottom: 18px;
+    padding: 12px 0;
+    border-radius: 12px;
+    font-weight: bold;
+    background: #444;
+}
+
+
+.choice:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.choice.wrong {
+    background-color: #f4511e;
+    color: white;
+    border-color: #f4511e;
+}
+
+.choice.correct {
+    background-color: #3e8e41;
+    color: white;
+    border-color: #3e8e41;
+}
+
+
+#scoreContainer {
+    font-size: 80px;
+    font-family: Impact;
+    position: absolute;
+    left:50%;
+    top:30%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    display: inline-block;
+}
+
+*.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    /*
+      Introduced in IE 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+    -ms-user-select: none;
+    user-select: none;
+}
